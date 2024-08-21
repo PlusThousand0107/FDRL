@@ -1,0 +1,6 @@
+7X7_Global_Aggr_3Cluster_FL_PPO___Epochs_5_Eps_0.05_AggPer_10_Batch_32_(1) : Mean = 1.5211 , STD = 0.1915 
+Elapsed time : 53.731133 
+Executaion_time_cost : 0.000340 
+
+
+- 1.5211
