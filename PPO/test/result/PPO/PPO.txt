@@ -1,0 +1,144 @@
+Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1) : Mean = 1.6265 , STD = 0.2085 
+Elapsed time : 8.459302 
+Executaion_time_cost : 0.000639 
+
+
+- 1.6265
+Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1) : Mean = 1.6212 , STD = 0.2275 
+Elapsed time : 8.610253 
+Executaion_time_cost : 0.000663 
+
+
+Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1) : Mean = 1.5956 , STD = 0.2278 
+Elapsed time : 8.309363 
+Executaion_time_cost : 0.000632 
+
+
+Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1) : Mean = 1.6170 , STD = 0.2217 
+Elapsed time : 8.361424 
+Executaion_time_cost : 0.000639 
+
+
+Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1) : Mean = 1.6019 , STD = 0.2274 
+Elapsed time : 8.259346 
+Executaion_time_cost : 0.000631 
+
+
+Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1) : Mean = 1.6170 , STD = 0.2137 
+Elapsed time : 8.331300 
+Executaion_time_cost : 0.000634 
+
+
+Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1) : Mean = 1.6265 , STD = 0.2085 
+Elapsed time : 8.340131 
+Executaion_time_cost : 0.000636 
+
+
+Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1) : Mean = 1.6356 , STD = 0.2133 
+Elapsed time : 8.398440 
+Executaion_time_cost : 0.000638 
+
+
+Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1) : Mean = 1.6282 , STD = 0.2175 
+Elapsed time : 8.343013 
+Executaion_time_cost : 0.000634 
+
+
+Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1) : Mean = 1.6269 , STD = 0.2124 
+Elapsed time : 8.373315 
+Executaion_time_cost : 0.000648 
+
+
+Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1) : Mean = 1.6325 , STD = 0.2189 
+Elapsed time : 8.431273 
+Executaion_time_cost : 0.000644 
+
+
+- 1.6212
+- 1.5956
+- 1.6170
+- 1.6019
+- 1.6170
+- 1.6265
+- 1.6356
+- 1.6282
+- 1.6269
+- 1.6325
+Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1) : Mean = 1.6325 , STD = 0.2189 
+Elapsed time : 8.596260 
+Executaion_time_cost : 0.000653 
+
+
+- 1.6325
+Distributed__PPO : Mean = 0.9234 , STD = 0.2104 
+Elapsed time : 27.879902 
+Executaion_time_cost : 0.000349 
+
+
+Distributed__PPO : Mean = 0.9452 , STD = 0.2147 
+Elapsed time : 27.871457 
+Executaion_time_cost : 0.000350 
+
+
+FL_PPO___Epochs_5_Eps_0.05_AggPer_10_Batch_32_(1) : Mean = 1.6072 , STD = 0.2439 
+Elapsed time : 27.109563 
+Executaion_time_cost : 0.000342 
+
+
+- 1.6072
+FL_PPO___Epochs_5_Eps_0.05_AggPer_10_Batch_32_(1) : Mean = 1.6033 , STD = 0.2446 
+Elapsed time : 27.622870 
+Executaion_time_cost : 0.000347 
+
+
+- 1.6033
+FL_PPO___Epochs_5_Eps_0.05_AggPer_10_Batch_32_(1) : Mean = 1.6033 , STD = 0.2446 
+Elapsed time : 27.703614 
+Executaion_time_cost : 0.000345 
+
+
+- 1.6033
+Global_Aggr_2Cluster_FL_PPO___Epochs_5_Eps_0.05_AggPer_10_Batch_32_(1) : Mean = 1.6013 , STD = 0.2463 
+Elapsed time : 28.130674 
+Executaion_time_cost : 0.000352 
+
+
+- 1.6013
+Global_Aggr_2Cluster_FL_PPO___Epochs_5_Eps_0.05_AggPer_10_Batch_32_(1) : Mean = 1.6189 , STD = 0.2370 
+Elapsed time : 26.686879 
+Executaion_time_cost : 0.000332 
+Global_Aggr_2Cluster_FL_PPO___Epochs_5_Eps_0.05_AggPer_10_Batch_32_(1) : Mean = 1.6146 , STD = 0.2389 
+Elapsed time : 26.697715 
+Executaion_time_cost : 0.000333 
+Global_Aggr_2Cluster_FL_PPO___Epochs_5_Eps_0.05_AggPer_10_Batch_32_(1) : Mean = 1.6013 , STD = 0.2463 
+Elapsed time : 26.855041 
+Executaion_time_cost : 0.000333 
+Global_Aggr_2Cluster_FL_PPO___Epochs_5_Eps_0.05_AggPer_10_Batch_32_(1) : Mean = 1.5985 , STD = 0.2505 
+Elapsed time : 26.868206 
+Executaion_time_cost : 0.000334 
+Global_Aggr_2Cluster_FL_PPO___Epochs_5_Eps_0.05_AggPer_10_Batch_32_(1) : Mean = 1.6143 , STD = 0.2496 
+Elapsed time : 26.690451 
+Executaion_time_cost : 0.000333 
+Global_Aggr_2Cluster_FL_PPO___Epochs_5_Eps_0.05_AggPer_10_Batch_32_(1) : Mean = 1.5904 , STD = 0.2497 
+Elapsed time : 26.722742 
+Executaion_time_cost : 0.000333 
+
+
+- 1.6189
+- 1.6146
+- 1.6013
+- 1.5985
+- 1.6143
+- 1.5904
+Global_Aggr_2Cluster_FL_PPO___Epochs_5_Eps_0.05_AggPer_10_Batch_32_(1) : Mean = 1.6189 , STD = 0.2370 
+Elapsed time : 28.504219 
+Executaion_time_cost : 0.000356 
+
+
+- 1.6189
+PFPPO___Epochs_5_Eps_0.05_AggPer_10_Batch_32__P0.5G0.5_(1) : Mean = 1.5797 , STD = 0.2558 
+Elapsed time : 26.948053 
+Executaion_time_cost : 0.000339 
+
+
+- 1.5797
