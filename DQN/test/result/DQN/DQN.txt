@@ -1,0 +1,19 @@
+FL_DQN_Fed_AggPer_10_(1) : Mean = 1.1771 , STD = 0.2303 
+Elapsed time : 26.819373 
+Executaion_time_cost : 0.000344 
+
+
+Ensemble_Personal_beta05_FL_DQN_Fed_AggPer_100__P0.5_G0.5_(1) : Mean = 1.4783 , STD = 0.2521 
+Elapsed time : 44.851290 
+Executaion_time_cost : 0.000702 
+
+
+
+Global_Aggr_2Cluster_FL_DQN_Fed_AggPer_10_(1) : Mean = 1.6040 , STD = 0.2323 
+Elapsed time : 27.153813 
+Executaion_time_cost : 0.000347 
+Global_Aggr_2Cluster_FL_DQN_Fed_AggPer_10_(1) : Mean = 1.6040 , STD = 0.2323 
+Elapsed time : 27.335666 
+Executaion_time_cost : 0.000348 
+
+
