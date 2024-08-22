@@ -98,7 +98,7 @@ if __name__ == '__main__':
     file_name=method+"_FL_DQN_Fed_AggPer_"+str(AggPer)+"__P"+str(Personal)+"_G"+str(Global)+"_("+str(Num)+")"
 
     directory = 'AggPer'+str(AggPer)+'_P'+str(Personal)+'_G'+str(Global)+"_("+str(Num)+")"
-    path = os.path.join('Personal_DQN/models_param/Personal_DQN/'+method, directory) 
+    path = os.path.join('models_param/Personal_DQN/'+method, directory) 
     os.mkdir(path)
 
     cnt=0
@@ -170,9 +170,9 @@ if __name__ == '__main__':
                 if reward > max_reward:
                     for n in range(num_of_agents):
                         agent=Agents_list[n]
-                        agent.save_models('Personal_DQN/models_param/Personal_DQN/'+method+'/'+directory+'/'+file_name+'_index_'+str(n)+"__("+str(cnt)+")"+'.pth')
+                        agent.save_models('models_param/Personal_DQN/'+method+'/'+directory+'/'+file_name+'_index_'+str(n)+"__("+str(cnt)+")"+'.pth')
 
-                    global_agent.save_models('Personal_DQN/models_param/Personal_DQN/'+method+'/'+directory+'/'+file_name+"__("+str(cnt)+")"+'.pth')
+                    global_agent.save_models('models_param/Personal_DQN/'+method+'/'+directory+'/'+file_name+"__("+str(cnt)+")"+'.pth')
 
                     max_reward = reward
                     cnt+=1
@@ -180,17 +180,17 @@ if __name__ == '__main__':
             st = time.time()
 
 
-np.save('Personal_DQN/npfiles/Personal_DQN/mean_reward/'+file_name+'__mean_reward.npy',np.array(mean_reward))
-np.save('Personal_DQN/npfiles/Personal_DQN/reward/'+file_name+'__reward.npy',np.array(reward_hist))
+np.save('npfiles/Personal_DQN/mean_reward/'+file_name+'__mean_reward.npy',np.array(mean_reward))
+np.save('npfiles/Personal_DQN/reward/'+file_name+'__reward.npy',np.array(reward_hist))
 
 
 plt.plot(reward_hist)
-plt.savefig('Personal_DQN/figs/Personal_DQN/reward/'+file_name+'__reward.png')
+plt.savefig('figs/Personal_DQN/reward/'+file_name+'__reward.png')
 #plt.show()
 plt.close()
 
 plt.plot(mean_reward)
-plt.savefig('Personal_DQN/figs/Personal_DQN/mean_reward/'+file_name+'__mean_reward.png')
+plt.savefig('figs/Personal_DQN/mean_reward/'+file_name+'__mean_reward.png')
 #plt.show()
 plt.close()
 
