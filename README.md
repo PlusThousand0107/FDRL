@@ -1,1 +1,1 @@
-實驗環境 & 操作方法 : https://hackmd.io/@qcAGsxjzT42W2nip4iGNDg/Sks196GiC
+建立實驗環境 & 操作說明 : https://hackmd.io/@qcAGsxjzT42W2nip4iGNDg/Sks196GiC
