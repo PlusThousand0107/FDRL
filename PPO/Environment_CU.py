@@ -58,11 +58,9 @@ class Env_cellular():
         self.p_array, self.p_list = self.generate_environment()
         
     def get_power_set(self, min_p):
-        # power_set = np.hstack([np.zeros((1), dtype=dtype), 1e-3*pow(10., 
-        #                             np.linspace(min_p, self.max_p, self.power_num-1)/10.)])
+
         power_set = np.hstack([np.zeros((1), dtype=dtype), 1e-3*pow(10., 
                                      np.linspace(min_p, self.max_p, self.power_num-1)/10.)])
-        #power_set[0]=1e-3*pow(10.,0.1)
         
         return power_set
         
@@ -194,7 +192,7 @@ class Env_cellular():
         
         return p_matrix, rate_matrix, reward_rate, sum_rate,rate
         
-    def generate_next_state(self, H2, p_matrix, rate_matrix):
+    def generate_next_state(self, H2, p_matrix, rate_matrix): # 下個狀態
         '''
         Generate state for actor
         ranking
@@ -214,8 +212,6 @@ class Env_cellular():
 #        s_actor_next = np.hstack([sinr_norm_inv, p_last])
         s_actor_next = np.hstack([sinr_norm_inv, p_last, rate_last])
 
-
-        
         s_critic_next = H2
         return s_actor_next, s_critic_next
         
@@ -237,8 +233,6 @@ class Env_cellular():
         return s_actor_next, s_critic_next, reward_rate, sum_rate,rate
     
 
-
-    
     def calculate_sumrate(self, P):
         maxC = 1000.
         H2 = self.H2_set[:,:,self.count]
