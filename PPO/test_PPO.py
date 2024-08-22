@@ -3,8 +3,6 @@
 
 import numpy as np
 from Environment_CU import Env_cellular
-# from Reinforce_Pytorch import PolicyGradientAgent
-# from Personal_Reinforce_Pytorch import PolicyGradientAgent as PersonalPG
 from PPO_agent import PPOAgent
 #from Personal_PPO_agent import PPOAgent as PersonalPPOAgent
 import time
@@ -15,7 +13,6 @@ import argparse # add parse
 def parse_args():
     parse=argparse.ArgumentParser()
     parse.add_argument('N',type=int)
-#    parse.add_argument('Num',type=int)
     args=parse.parse_args()
     return args
 
@@ -44,8 +41,7 @@ max_episode=100 #for test
 env = Env_cellular(fd, Ts, n_x, n_y, L, C, maxM, min_dis, max_dis, max_p, p_n, power_num)
 env.set_Ns(Ns)
 
-batch_size = 512
-buffer_size = 50000
+
 
 state_num = env.state_num
 action_num = env.power_num  
@@ -58,7 +54,7 @@ PPO_agent = PPOAgent(epochs=5,eps=0.05,state_dims=state_num,gamma=0.9,n_actions=
 l=max_episode*(Ns-1)
 
 
-result_path = 'PPO/test/result/PPO/PPO.txt'
+result_path = 'test/result/PPO/PPO.txt'
 
 choice=1
 # Central 1
@@ -69,7 +65,7 @@ choice=1
 ############################################################################################################################
 
 
-if choice==1: # Central
+if choice==1: # Central 集中式
     PPO_mean=[]
     num=1
     file_name="Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1)"
@@ -80,9 +76,9 @@ if choice==1: # Central
         t=time.time()
         torch.manual_seed(seed)
         np.random.seed(seed)
-        #PPO_agent.load_model('PPO/models_param/PPO/'+file_name+'/'+file_name+'__('+str(i)+')_actor.pth')
+
         PPO_agent.load_model('models_param/PPO/'+file_name+'/'+file_name+'_actor.pth')
-        #PPO_agent.load_model('test/models/PPO/'+file_name+'/35000_StateAvg_Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1)__(196)_actor.pth')
+
         
         agent=PPO_agent
         reward_dpg_list = list()   
@@ -116,13 +112,11 @@ if choice==1: # Central
         
 
 
-elif choice==2: # Dist
+elif choice==2: # Dist 分散式
 
     PPO_mean=[]
     num=1
     file_name="Dist_PPO___Epochs_5_Eps_0.05_Batch_32_(1)"
-
-
 
     Agents_list=[]
     for n in range(num_of_agents):
@@ -130,7 +124,6 @@ elif choice==2: # Dist
 
     for i in range(num_of_agents):
         Agents_list[i].load_model('models_param/PPO/'+file_name+'/'+file_name+'_index_'+str(i)+'__(0)_actor.pth')
-        #PPO_agent.load_model('test/models/PPO/'+file_name+'/'+file_name+'__('+str(i)+')_actor.pth')
 
     executaion_time_cost=0
     t=time.time()
@@ -171,7 +164,7 @@ elif choice==2: # Dist
         with open(result_path, 'a') as f:
             f.write("- %.4f\n"%((PPO_mean[i])))
 
-elif choice==3: # FL
+elif choice==3: # FL 聯邦式
 
     # N=1
     PPO_mean=[]
@@ -184,8 +177,6 @@ elif choice==3: # FL
         t=time.time()
         torch.manual_seed(seed)
         np.random.seed(seed)
-        #DPG_agent.load_model('models_param/DPG/'+file_name+'_'+AggPerNum[agg]+'_('+str(N)+').pth')
-        #PPO_agent.load_model('PPO/test/models/PPO/'+file_name+'/'+file_name+'__('+str(i)+')_actor.pth')
         PPO_agent.load_model('models_param/PPO/'+file_name+'/'+file_name+'_actor.pth')
         agent=PPO_agent
         reward_dpg_list = list()                 
@@ -225,8 +216,7 @@ elif choice==3: # FL
             f.write("- %.4f\n"%((PPO_mean[i])))
 
 
-
-elif choice==4: # FL
+elif choice==4: # CFL 分群聯邦式
 
     # N=1
     PPO_mean=[]
@@ -238,8 +228,6 @@ elif choice==4: # FL
         t=time.time()
         torch.manual_seed(seed)
         np.random.seed(seed)
-        #DPG_agent.load_model('models_param/DPG/'+file_name+'_'+AggPerNum[agg]+'_('+str(N)+').pth')
-        #PPO_agent.load_model('PPO/models_param/PPO/'+file_name+'/'+file_name+'_global_agentG__('+str(i)+')_actor.pth')
         PPO_agent.load_model('models_param/PPO/'+file_name+'/'+file_name+'_global_agentG__(0)_actor.pth')
         agent=PPO_agent
         reward_dpg_list = list()                 
