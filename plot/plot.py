@@ -35,3 +35,4 @@ plt.legend(loc="lower right",prop={'size': 16})
 plt.xticks(size = 20)
 plt.yticks(size = 20)
 
+plt.show()
