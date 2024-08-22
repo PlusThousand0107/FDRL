@@ -18,12 +18,12 @@ import os # create directory
 #     return args
 
 if __name__ == '__main__':
-    fd = 10 
-    Ts = 20e-3 
+    fd = 10 # 最大督普勒頻率
+    Ts = 20e-3 # 每個時間步長度
     n_x = 5 
     n_y = 5 
-    L = 2
-    C = 16
+    L = 2 # 鄰近區域範圍
+    C = 16 # 會被選為做為狀態輸入的用戶數量
     maxM = 4   # user number in one BS
     min_dis = 0.01 #km
     max_dis = 1. #km 1.
@@ -38,8 +38,8 @@ if __name__ == '__main__':
     env = Env_cellular(fd, Ts, n_x, n_y, L, C, maxM, min_dis, max_dis, max_p, p_n, power_num)
     
     max_reward = 0
-    batch_size = 512
-    max_episode = 7000
+    batch_size = 512 # batch 大小
+    max_episode = 7000 # 總回合數
 
     Ns = 11
     env.set_Ns(Ns) 
@@ -52,7 +52,7 @@ if __name__ == '__main__':
     # Epochs=args.Epochs
     # Eps=args.Eps
     # Num=args.Num
-    Epochs=5
+    Epochs=5 
     Eps=0.05
     Num=1
     
@@ -98,7 +98,7 @@ if __name__ == '__main__':
             all_reward.append(r)
             
         #agent.learn()
-        agent.update(agent.transition_dict,batch_size)
+        agent.update(agent.transition_dict,batch_size) # 更新神經網路
             
         reward_hist.append(np.mean(reward_policy_list))   # bps/Hz per link
         if k % interval == 0: 
