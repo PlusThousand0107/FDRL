@@ -19,12 +19,12 @@ import os # create directory
 #     return args
 
 if __name__ == '__main__':
-    fd = 10 
-    Ts = 20e-3 
-    n_x = 9 #5
-    n_y = 9 #5
-    L = 2
-    C = 16
+    fd = 10 # 最大督普勒頻率
+    Ts = 20e-3 # 每個時間步長度
+    n_x = 5 
+    n_y = 5 
+    L = 2 # 鄰近區域範圍
+    C = 16 # 會被選為做為狀態輸入的用戶數量
     maxM = 4   # user number in one BS
     min_dis = 0.01 #km
     max_dis = 1. #km 1.
@@ -232,7 +232,7 @@ if __name__ == '__main__':
             st = time.time()
 
 
-print(file_name+" : "+str(max_reward)+" max cnt : "+str(max_cnt))
+print(file_name+" : "+str(max_reward))
 np.save('npfiles/9X9_PPO/mean_reward/'+file_name+'__mean_reward.npy',np.array(mean_reward))
 np.save('npfiles/9X9_PPO/reward/'+file_name+'__reward.npy',np.array(reward_hist))
 
