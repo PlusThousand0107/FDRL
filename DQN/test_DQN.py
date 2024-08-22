@@ -42,7 +42,7 @@ dqn_agent=DQNAgent( gamma=0, lr=1e-3, n_actions=action_num, state_dim=state_num,
 
 l=max_episode*(Ns-1)
 
-result_path = 'DQN/test/result/DQN/DQN.txt'
+result_path = 'test/result/DQN/DQN.txt'
 
 choice=3
 # Central 1
@@ -58,7 +58,7 @@ if choice==1: # Central
     t=time.time()
     torch.manual_seed(seed)
     np.random.seed(seed)
-    dqn_agent.load_models('DQN/models_param/DQN/Central_DQN.pth')
+    dqn_agent.load_models('models_param/DQN/Central_DQN.pth')
     agent=dqn_agent
     reward_hist_dqn = list()   
     for k in range(max_episode):
@@ -91,7 +91,7 @@ elif choice==2: # Dist
                 replace=1000)) # gamma=0
 
     for i in range(num_of_agents):
-        Agents_list[i].load_models('DQN/test/models/DQN/Dist/Distributed_DQN_index_'+str(n)+'.pth')
+        Agents_list[i].load_models('test/models/DQN/Dist/Distributed_DQN_index_'+str(n)+'.pth')
 
     executaion_time_cost=0
     t=time.time()
@@ -141,7 +141,7 @@ elif choice==3: # FL
         torch.manual_seed(seed)
         np.random.seed(seed)
         #dqn_agent.load_models('DQN/models_param/DQN/'+file_name+'_'+AggPerNum[agg]+'_('+str(N)+').pth')
-        dqn_agent.load_models('DQN/models_param/DQN/'+file_name+'_'+AggPerNum[agg]+'_(1).pth')
+        dqn_agent.load_models('models_param/DQN/'+file_name+'_'+AggPerNum[agg]+'_(1).pth')
         agent=dqn_agent
         reward_hist_dqn = list()                
         for k in range(max_episode):
