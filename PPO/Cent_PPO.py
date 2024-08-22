@@ -66,7 +66,7 @@ if __name__ == '__main__':
 
     file_name="Cent_PPO___Epochs_"+str(Epochs)+"_Eps_"+str(Eps)+"_Batch_"+str(batch_size)+"_("+str(Num)+")"
 
-    path = os.path.join('PPO/models_param/PPO/', file_name)
+    path = os.path.join('models_param/PPO/', file_name)
     os.mkdir(path)
 
     cnt=0
@@ -106,7 +106,7 @@ if __name__ == '__main__':
             mean_reward.append(reward)
 
             if reward > 1.58 and k>4000:
-                agent.save_models("PPO/models_param/PPO/"+file_name+"/"+file_name)
+                agent.save_models("models_param/PPO/"+file_name+"/"+file_name)
                 cnt+=1
                 if reward > max_reward:
                    max_reward = reward
@@ -116,17 +116,17 @@ if __name__ == '__main__':
             st = time.time()
 
 print(file_name+" : "+str(max_reward)+" max cnt : "+str(max_cnt))
-np.save('PPO/npfiles/PPO/mean_reward/'+file_name+'__mean_reward.npy',np.array(mean_reward))
-np.save('PPO/npfiles/PPO/reward/'+file_name+'__reward.npy',np.array(reward_hist))
+np.save('npfiles/PPO/mean_reward/'+file_name+'__mean_reward.npy',np.array(mean_reward))
+np.save('npfiles/PPO/reward/'+file_name+'__reward.npy',np.array(reward_hist))
 
 
 plt.plot(reward_hist)
-plt.savefig('PPO/figs/PPO/reward/'+file_name+'__reward.png')
+plt.savefig('figs/PPO/reward/'+file_name+'__reward.png')
 #plt.show()
 plt.close()
 
 plt.plot(mean_reward)
-plt.savefig('PPO/figs/PPO/mean_reward/'+file_name+'__mean_reward.png')
+plt.savefig('figs/PPO/mean_reward/'+file_name+'__mean_reward.png')
 #plt.show()
 plt.close()
 
