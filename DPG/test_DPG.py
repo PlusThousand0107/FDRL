@@ -42,7 +42,7 @@ DPG_agent=PolicyGradientAgent(lr=0.0003,state_dims=state_num,gamma=0.99,n_action
 l=max_episode*(Ns-1)
 
 
-result_path = 'DPG/test/result/DPG/DPG.txt'
+result_path = 'test/result/DPG/DPG.txt'
 
 choice=3
 # Central 1
@@ -58,7 +58,7 @@ if choice==1: # Central
     t=time.time()
     torch.manual_seed(seed)
     np.random.seed(seed)
-    DPG_agent.load_model('DPG/models_param/DPG/Central_DPG.pth')
+    DPG_agent.load_model('models_param/DPG/Central_DPG.pth')
     agent=DPG_agent
     reward_dpg_list = list()   
     for k in range(max_episode):
@@ -89,7 +89,7 @@ elif choice==2: # Dist
         Agents_list.append(PolicyGradientAgent(lr=0.0003,state_dims=state_num,gamma=0.99,n_actions=action_num))
 
     for i in range(num_of_agents):
-        Agents_list[i].load_model('DPG/test/models/DPG/Dist/Distributed_DPG_index_'+str(n)+'.pth')
+        Agents_list[i].load_model('test/models/DPG/Dist/Distributed_DPG_index_'+str(n)+'.pth')
 
     
     executaion_time_cost=0
@@ -141,7 +141,7 @@ elif choice==3: # FL
         torch.manual_seed(seed)
         np.random.seed(seed)
         #DPG_agent.load_model('DPG/models_param/DPG/'+file_name+'_'+AggPerNum[agg]+'_('+str(N)+').pth')
-        DPG_agent.load_model('DPG/models_param/DPG/'+file_name+'_'+AggPerNum[agg]+'_(1).pth')
+        DPG_agent.load_model('models_param/DPG/'+file_name+'_'+AggPerNum[agg]+'_(1).pth')
         agent=DPG_agent
         reward_dpg_list = list()                 
         for k in range(max_episode):
