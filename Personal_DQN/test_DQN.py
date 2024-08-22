@@ -230,9 +230,9 @@ elif choice==4:
         for PG in range(len(P)):
 
             for i in range(num_of_agents):
-                Agents_list[i].load_models('Personal_DQN/models_param/Personal_DQN/'+folder+'/AggPer'+str(AggPer[AggPerNum])+'_P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')/'+folder+'_FL_DQN_Fed_AggPer_'+str(AggPer[AggPerNum])+'__P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')_index_'+str(n)+"__("+str(cnt)+")"+'.pth')
+                Agents_list[i].load_models('models_param/Personal_DQN/'+folder+'/AggPer'+str(AggPer[AggPerNum])+'_P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')/'+folder+'_FL_DQN_Fed_AggPer_'+str(AggPer[AggPerNum])+'__P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')_index_'+str(n)+"__("+str(cnt)+")"+'.pth')
 
-            dqn_agent.load_models('Personal_DQN/models_param/Personal_DQN/'+folder+'/AggPer'+str(AggPer[AggPerNum])+'_P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')/'+folder+'_FL_DQN_Fed_AggPer_'+str(AggPer[AggPerNum])+'__P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')'+"__("+str(cnt)+")"+'.pth')
+            dqn_agent.load_models('models_param/Personal_DQN/'+folder+'/AggPer'+str(AggPer[AggPerNum])+'_P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')/'+folder+'_FL_DQN_Fed_AggPer_'+str(AggPer[AggPerNum])+'__P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')'+"__("+str(cnt)+")"+'.pth')
             
             executaion_time_cost=0
             t=time.time()
