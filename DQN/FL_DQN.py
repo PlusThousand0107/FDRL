@@ -140,7 +140,7 @@ if __name__ == '__main__':
             for n in range(num_of_agents):
                 mean_reward_lists_of_list[n].append(np.mean(agent_rewards[n,-interval:]))
             if reward > max_reward:
-                global_agent.save_models('DQN/models_param/DQN/'+file_name+'.pth')
+                global_agent.save_models('models_param/DQN/'+file_name+'.pth')
 
                 max_reward = reward
             print("Episode(train):%d  DQN: %.3f  Time cost: %.2fs" %(k, reward, time.time()-st))
@@ -148,17 +148,17 @@ if __name__ == '__main__':
 
 
 print(file_name+" : "+str(max_reward))
-np.save('DQN/npfiles/DQN/mean_reward/'+file_name+'__mean_reward.npy',np.array(mean_reward))
-np.save('DQN/npfiles/DQN/reward/'+file_name+'__reward.npy',np.array(reward_hist))
+np.save('npfiles/DQN/mean_reward/'+file_name+'__mean_reward.npy',np.array(mean_reward))
+np.save('npfiles/DQN/reward/'+file_name+'__reward.npy',np.array(reward_hist))
 
 
 plt.plot(reward_hist)
-plt.savefig('DQN/figs/DQN/reward/'+file_name+'__reward.png')
+plt.savefig('figs/DQN/reward/'+file_name+'__reward.png')
 #plt.show()
 plt.close()
 
 plt.plot(mean_reward)
-plt.savefig('DQN/figs/DQN/mean_reward/'+file_name+'__mean_reward.png')
+plt.savefig('figs/DQN/mean_reward/'+file_name+'__mean_reward.png')
 #plt.show()
 plt.close()
 
