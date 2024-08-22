@@ -17,7 +17,7 @@ def parse_args():
     args=parse.parse_args()
     return args
 
-# 1 13 5 50 19 25 100 200
+
 fd = 10
 Ts = 20e-3
 n_x = 9
@@ -245,9 +245,9 @@ elif choice==4:
         for PG in range(len(P)):
 
             for i in range(num_of_agents):
-                Agents_list[i].load_models('9X9_Personal_DQN/test/models/Personal_DQN/'+folder+'/AggPer'+str(AggPer[AggPerNum])+'_P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')/'+folder+'_FL_DQN_Fed_AggPer_'+str(AggPer[AggPerNum])+'__P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')_index_'+str(n)+"__("+str(cnt)+")"+'.pth')
+                Agents_list[i].load_models('test/models/Personal_DQN/'+folder+'/AggPer'+str(AggPer[AggPerNum])+'_P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')/'+folder+'_FL_DQN_Fed_AggPer_'+str(AggPer[AggPerNum])+'__P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')_index_'+str(n)+"__("+str(cnt)+")"+'.pth')
 
-            dqn_agent.load_models('9X9_Personal_DQN/test/models/Personal_DQN/'+folder+'/AggPer'+str(AggPer[AggPerNum])+'_P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')/'+folder+'_FL_DQN_Fed_AggPer_'+str(AggPer[AggPerNum])+'__P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')'+"__("+str(cnt)+")"+'.pth')
+            dqn_agent.load_models('test/models/Personal_DQN/'+folder+'/AggPer'+str(AggPer[AggPerNum])+'_P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')/'+folder+'_FL_DQN_Fed_AggPer_'+str(AggPer[AggPerNum])+'__P'+str(P[PG])+'_G'+str(G[PG])+'_('+str(N)+')'+"__("+str(cnt)+")"+'.pth')
             
             
             executaion_time_cost=0
@@ -269,14 +269,6 @@ elif choice==4:
 
                         a_agent = agent.select_action(s_actor_agent,k) * P[PG] + dqn_agent.select_action(s_actor_agent,k) * G[PG]
 
-
-                        
-                        #epsilon  = INITIAL_EPSILON - k * (INITIAL_EPSILON - FINAL_EPSILON ) / max_episode 
-                        #M=4
-                        #rand_idx=np.array(np.random.uniform(size = (M)) < epsilon, dtype = np.int32) # random
-
-
-                        #a_agent = agent.select_action(s_actor_agent,rand_idx) * P[PG] + dqn_agent.select_action(s_actor_agent,rand_idx) * G[PG] # Personal + Global
 
                         
                         a_agent=np.around(a_agent).astype(int)
