@@ -17,12 +17,12 @@ dtype = np.float32
 from scipy import special
 
 
-fd = 10 
-Ts = 20e-3
+fd = 10 # 最大督普勒頻率
+Ts = 20e-3 # 每個時間步長度
 n_x = 5
 n_y = 5
-L = 2 
-C = 16
+L = 2 # 鄰近區域範圍
+C = 16 # 會被選為做為狀態輸入的用戶數量
 maxM = 4   # user number in one BS
 min_dis = 0.01 #km
 max_dis = 1. #km
@@ -214,55 +214,6 @@ class Env_cellular():
 #        s_actor_next = np.hstack([sinr_norm_inv, p_last])
         s_actor_next = np.hstack([sinr_norm_inv, p_last, rate_last])
 
-        '''
-        sinr_averages = np.mean(sinr_norm_inv, axis=1)
-        #sinr_std = np.std(sinr_norm_inv, axis=1)
-        #sinr_max= np.max(sinr_norm_inv, axis=1)
-        #sinr_min= np.min(sinr_norm_inv, axis=1)
-        #s_actor_next = np.hstack((s_actor_next, sinr_averages[:, None],sinr_max[:, None],sinr_min[:, None]))
-        s_actor_next = np.hstack((s_actor_next, sinr_averages[:, None]))
-        #s_actor_next = np.hstack((s_actor_next, sinr_std[:, None]))
-
-        p_averages = np.mean(p_last, axis=1)
-        #p_std = np.std(p_last, axis=1)
-        #p_max= np.max(p_last, axis=1)
-        #p_min= np.min(p_last, axis=1)
-        s_actor_next = np.hstack((s_actor_next, p_averages[:, None]))
-        #s_actor_next = np.hstack((s_actor_next, p_averages[:, None],p_max[:, None],p_min[:, None]))
-        #s_actor_next = np.hstack((s_actor_next, p_std[:, None]))
-
-        c_averages = np.mean(rate_last, axis=1)
-        #c_std = np.std(rate_last, axis=1)
-        #c_max= np.max(rate_last, axis=1)
-        #c_min= np.min(rate_last, axis=1)
-        #s_actor_next = np.hstack((s_actor_next, c_averages[:, None],c_max[:, None],c_min[:, None]))
-        s_actor_next = np.hstack((s_actor_next, c_averages[:, None]))
-        #s_actor_next = np.hstack((s_actor_next, c_std[:, None]))
-
-        #s_actor_next = s_actor_next[:, 50:]
-
-        #s_actor_next = np.hstack([sinr_norm_inv, rate_last])
-        #s_actor_next=sinr_norm_inv
-        '''
-        '''
-        columns_to_normalize = sinr_norm_inv[:, :16]
-        min_vals = columns_to_normalize.min(axis=0)
-        max_vals = columns_to_normalize.max(axis=0)
-        normalized_columns = (columns_to_normalize - min_vals) / (max_vals - min_vals+0.000000000001)
-        s_actor_next[:, :16] = normalized_columns
-
-        columns_to_normalize = p_last[:, 16:33]
-        min_vals = columns_to_normalize.min(axis=0)
-        max_vals = columns_to_normalize.max(axis=0)
-        normalized_columns = (columns_to_normalize - min_vals) / (max_vals - min_vals+0.000000000001)
-        s_actor_next[:, 16:33] = normalized_columns
-
-        columns_to_normalize = rate_matrix[:, 33:50]
-        min_vals = columns_to_normalize.min(axis=0)
-        max_vals = columns_to_normalize.max(axis=0)
-        normalized_columns = (columns_to_normalize - min_vals) / (max_vals - min_vals+0.000000000001)
-        s_actor_next[:, 33:50] = normalized_columns
-        '''
 
         
         s_critic_next = H2
