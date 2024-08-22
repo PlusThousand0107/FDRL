@@ -60,7 +60,7 @@ PPO_agent = PPOAgent(epochs=5,eps=0.05,state_dims=state_num,gamma=0.9,n_actions=
 l=max_episode*(Ns-1)
 
 
-result_path = 'PPO/test/result/PPO/PPO.txt'
+result_path = 'test/result/PPO/PPO.txt'
 
 choice=4
 # Central 1
@@ -85,7 +85,7 @@ if choice==1: # Central
         t=time.time()
         torch.manual_seed(seed)
         np.random.seed(seed)
-        PPO_agent.load_model('PPO/test/models/PPO/'+file_name+'/'+file_name+'__('+str(i)+')_actor.pth')
+        PPO_agent.load_model('test/models/PPO/'+file_name+'/'+file_name+'__('+str(i)+')_actor.pth')
         #PPO_agent.load_model('test/models/PPO/'+file_name+'/35000_StateAvg_Cent_PPO___Epochs_5_Eps_0.05_Batch_512_(1)__(196)_actor.pth')
         
         agent=PPO_agent
@@ -133,7 +133,7 @@ elif choice==2: # Dist
         Agents_list.append(PPOAgent(epochs=5,eps=0.05,state_dims=state_num,gamma=0.9,n_actions=action_num))
 
     for i in range(num_of_agents):
-        Agents_list[i].load_model('PPO/test/models/PPO/'+file_name+'/'+file_name+'_index_'+str(i)+'__(0)_actor.pth')
+        Agents_list[i].load_model('test/models/PPO/'+file_name+'/'+file_name+'_index_'+str(i)+'__(0)_actor.pth')
 
 
     
@@ -192,7 +192,7 @@ elif choice==3: # FL
         np.random.seed(seed)
         #DPG_agent.load_model('models_param/DPG/'+file_name+'_'+AggPerNum[agg]+'_('+str(N)+').pth')
         #PPO_agent.load_model('PPO/test/models/PPO/'+file_name+'/'+file_name+'__('+str(i)+')_actor.pth')
-        PPO_agent.load_model('PPO/test/models/PPO/'+file_name+'/'+file_name+'__(20)_actor.pth')
+        PPO_agent.load_model('test/models/PPO/'+file_name+'/'+file_name+'__(20)_actor.pth')
         agent=PPO_agent
         reward_dpg_list = list()                 
         for k in range(max_episode):
@@ -247,7 +247,7 @@ elif choice==4: # FL
         np.random.seed(seed)
         #DPG_agent.load_model('models_param/DPG/'+file_name+'_'+AggPerNum[agg]+'_('+str(N)+').pth')
         #PPO_agent.load_model('PFPPO/test/models/PPO/'+file_name+'/'+file_name+'__('+str(i)+')_actor.pth')
-        PPO_agent.load_model('PFPPO/models_param/PFPPO/'+file_name+'/'+file_name+'__(0)_actor.pth')
+        PPO_agent.load_model('models_param/PFPPO/'+file_name+'/'+file_name+'__(0)_actor.pth')
         agent=PPO_agent
         reward_dpg_list = list()                 
         for k in range(max_episode):
