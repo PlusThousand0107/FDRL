@@ -115,7 +115,7 @@ if __name__ == '__main__':
             print("Episode(train):%d  policy: %.3f  Time cost: %.2fs" %(k, reward, time.time()-st))
             st = time.time()
 
-print(file_name+" : "+str(max_reward)+" max cnt : "+str(max_cnt))
+print(file_name+" : "+str(max_reward))
 np.save('npfiles/PPO/mean_reward/'+file_name+'__mean_reward.npy',np.array(mean_reward))
 np.save('npfiles/PPO/reward/'+file_name+'__reward.npy',np.array(reward_hist))
 
