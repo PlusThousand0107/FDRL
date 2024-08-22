@@ -108,7 +108,7 @@ if __name__ == '__main__':
    
     file_name="9X9_Global_Aggr_9Cluster_FL_PPO___Epochs_"+str(Epochs)+"_Eps_"+str(Eps)+"_AggPer_"+str(AggPer)+"_Batch_"+str(batch_size)+"_("+str(Num)+")"
 
-    path = os.path.join('9X9_PPO/models_param/9X9_PPO/', file_name)
+    path = os.path.join('models_param/9X9_PPO/', file_name)
     os.mkdir(path)
 
     cnt=0
@@ -323,7 +323,7 @@ if __name__ == '__main__':
                 mean_reward_lists_of_list[n].append(np.mean(agent_rewards[n,-interval:]))
 
             if reward > 1.44 and k>5700 :
-                global_agent_G.save_models("9X9_PPO/models_param/9X9_PPO/"+file_name+"/"+file_name+"_global_agentG__("+str(cnt)+")")
+                global_agent_G.save_models("models_param/9X9_PPO/"+file_name+"/"+file_name+"_global_agentG__("+str(cnt)+")")
                 cnt+=1
                 if reward > max_reward:
                    max_reward = reward
@@ -335,16 +335,16 @@ if __name__ == '__main__':
 
 
 print(file_name+" : "+str(max_reward)+" max cnt : "+str(max_cnt))
-np.save('9X9_PPO/npfiles/9X9_PPO/mean_reward/'+file_name+'__mean_reward.npy',np.array(mean_reward))
-np.save('9X9_PPO/npfiles/9X9_PPO/reward/'+file_name+'__reward.npy',np.array(reward_hist))
+np.save('npfiles/9X9_PPO/mean_reward/'+file_name+'__mean_reward.npy',np.array(mean_reward))
+np.save('npfiles/9X9_PPO/reward/'+file_name+'__reward.npy',np.array(reward_hist))
 
 
 plt.plot(reward_hist)
-plt.savefig('9X9_PPO/figs/9X9_PPO/reward/'+file_name+'__reward.png')
+plt.savefig('figs/9X9_PPO/reward/'+file_name+'__reward.png')
 #plt.show()
 plt.close()
 
 plt.plot(mean_reward)
-plt.savefig('9X9_PPO/figs/9X9_PPO/mean_reward/'+file_name+'__mean_reward.png')
+plt.savefig('figs/9X9_PPO/mean_reward/'+file_name+'__mean_reward.png')
 #plt.show()
 plt.close()
