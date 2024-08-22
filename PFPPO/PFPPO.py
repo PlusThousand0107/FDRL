@@ -90,7 +90,7 @@ if __name__ == '__main__':
 
     file_name="PFPPO___Epochs_"+str(Epochs)+"_Eps_"+str(Eps)+"_AggPer_"+str(AggPer)+"_Batch_"+str(batch_size)+"__P"+str(Personal)+"G"+str(Global)+"_("+str(Num)+")"
 
-    path = os.path.join('PFPPO/models_param/PFPPO/', file_name)
+    path = os.path.join('models_param/PFPPO/', file_name)
     os.mkdir(path)
 
     cnt=0
@@ -185,7 +185,7 @@ if __name__ == '__main__':
                 mean_reward_lists_of_list[n].append(np.mean(agent_rewards[n,-interval:]))
             
             if reward > 1.5 and k>4500:
-                global_agent.save_models("PFPPO/models_param/PFPPO/"+file_name+"/"+file_name+"__("+str(cnt)+")")
+                global_agent.save_models("models_param/PFPPO/"+file_name+"/"+file_name+"__("+str(cnt)+")")
                 cnt+=1
                 if reward > max_reward:
                    max_reward = reward
@@ -195,17 +195,17 @@ if __name__ == '__main__':
             st = time.time()
 
 print(file_name+" : "+str(max_reward)+" max cnt : "+str(max_cnt))
-np.save('PFPPO/npfiles/PFPPO/mean_reward/'+file_name+'__mean_reward.npy',np.array(mean_reward))
-np.save('PFPPO/npfiles/PFPPO/reward/'+file_name+'__reward.npy',np.array(reward_hist))
+np.save('npfiles/PFPPO/mean_reward/'+file_name+'__mean_reward.npy',np.array(mean_reward))
+np.save('npfiles/PFPPO/reward/'+file_name+'__reward.npy',np.array(reward_hist))
 
 
 plt.plot(reward_hist)
-plt.savefig('PFPPO/figs/PFPPO/reward/'+file_name+'__reward.png')
+plt.savefig('figs/PFPPO/reward/'+file_name+'__reward.png')
 #plt.show()
 plt.close()
 
 plt.plot(mean_reward)
-plt.savefig('PFPPO/figs/PFPPO/mean_reward/'+file_name+'__mean_reward.png')
+plt.savefig('figs/PFPPO/mean_reward/'+file_name+'__mean_reward.png')
 #plt.show()
 plt.close()
 
