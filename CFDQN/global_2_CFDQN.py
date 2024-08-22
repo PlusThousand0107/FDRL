@@ -176,7 +176,7 @@ if __name__ == '__main__':
                 mean_reward_lists_of_list[n].append(np.mean(agent_rewards[n,-interval:]))
             if reward > max_reward:
 
-                global_agent_G.save_models('CFDQN/models_param/CFDQN/'+file_name+'.pth')
+                global_agent_G.save_models('models_param/CFDQN/'+file_name+'.pth')
                 #global_agent_G.save_models("models_param/PPO/"+file_name+"/"+file_name+"_global_agentG__("+str(cnt)+")")
 
                 max_reward = reward
@@ -186,17 +186,17 @@ if __name__ == '__main__':
 
 
 print(file_name+" : "+str(max_reward))
-np.save('CFDQN/npfiles/CFDQN/mean_reward/'+file_name+'__mean_reward.npy',np.array(mean_reward))
-np.save('CFDQN/npfiles/CFDQN/reward/'+file_name+'__reward.npy',np.array(reward_hist))
+np.save('npfiles/CFDQN/mean_reward/'+file_name+'__mean_reward.npy',np.array(mean_reward))
+np.save('npfiles/CFDQN/reward/'+file_name+'__reward.npy',np.array(reward_hist))
 
 
 plt.plot(reward_hist)
-plt.savefig('CFDQN/figs/CFDQN/reward/'+file_name+'__reward.png')
+plt.savefig('figs/CFDQN/reward/'+file_name+'__reward.png')
 #plt.show()
 plt.close()
 
 plt.plot(mean_reward)
-plt.savefig('CFDQN/figs/CFDQN/mean_reward/'+file_name+'__mean_reward.png')
+plt.savefig('figs/CFDQN/mean_reward/'+file_name+'__mean_reward.png')
 #plt.show()
 plt.close()
 
