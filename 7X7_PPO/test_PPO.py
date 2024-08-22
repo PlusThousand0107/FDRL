@@ -57,7 +57,7 @@ PPO_agent = PPOAgent(epochs=5,eps=0.05,state_dims=state_num,gamma=0.9,n_actions=
 l=max_episode*(Ns-1)
 
 
-result_path = '7X7_PPO/test/result/7X7_PPO/7X7_PPO.txt'
+result_path = 'test/result/7X7_PPO/7X7_PPO.txt'
 
 choice=4
 # Central 1
@@ -234,7 +234,7 @@ elif choice==4: # FL
         np.random.seed(seed)
         #DPG_agent.load_model('models_param/DPG/'+file_name+'_'+AggPerNum[agg]+'_('+str(N)+').pth')
         #PPO_agent.load_model('test/models/PPO/'+file_name+'/'+file_name+'_global_agentG__('+str(i)+')_actor.pth')
-        PPO_agent.load_model('7X7_PPO/models_param/7X7_PPO/'+file_name+'/'+file_name+'_global_agentG__(0)_actor.pth')
+        PPO_agent.load_model('models_param/7X7_PPO/'+file_name+'/'+file_name+'_global_agentG__(0)_actor.pth')
         agent=PPO_agent
         reward_dpg_list = list()                 
         for k in range(max_episode):
