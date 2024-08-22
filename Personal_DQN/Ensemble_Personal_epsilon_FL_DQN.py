@@ -23,12 +23,12 @@ import os # create directory
 
 
 if __name__ == '__main__':
-    fd = 10 
-    Ts = 20e-3 
+    fd = 10 # 最大督普勒頻率
+    Ts = 20e-3 # 每個時間步長度
     n_x = 5 
     n_y = 5 
-    L = 2
-    C = 16
+    L = 2 # 鄰近區域範圍
+    C = 16 # 會被選為做為狀態輸入的用戶數量
     maxM = 4   # user number in one BS
     min_dis = 0.01 #km
     max_dis = 1. #km 1.
@@ -80,8 +80,8 @@ if __name__ == '__main__':
     # Global=args.Global
     # Num=args.Num
     AggPer=100
-    Personal=0.5
-    Global=0.5
+    Personal=0.5 # 個人化比例
+    Global=0.5 # 全局化比例
     Num=1
     
 
@@ -115,9 +115,9 @@ if __name__ == '__main__':
                 M=4
                 rand_idx=np.array(np.random.uniform(size = (M)) < epsilon, dtype = np.int32) # random
 
-                a_agent = agent.select_action(s_actor_agent,rand_idx) * Personal + global_agent.select_action(s_actor_agent,rand_idx) * Global # Personal + Global
+                a_agent = agent.select_action(s_actor_agent,rand_idx) * Personal + global_agent.select_action(s_actor_agent,rand_idx) * Global # Personal + Global 混和動作
 
-                a_agent=np.around(a_agent).astype(int)
+                a_agent=np.around(a_agent).astype(int) #離散動作空間，須進位至整數
 
                 p_agent=env.get_power_set(min_p)[a_agent]
                 
